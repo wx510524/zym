@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞节快乐</title>
+    <style>
+        body {
+            font-family: "微软雅黑", Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0000; /* 超鲜艳红色 */
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="video" autoplay loop muted>
+            <source src="your-video.mp4" type="video/mp4">
+            <source src="your-video.webm" type="video/webm">
+            <source src="your-video.ogv" type="video/ogg">
+            您的浏览器不支持视频标签。
+        </video>
+        <div class="centered-text">曾钰媚，圣诞节快乐！</div>
+    </div>
+
+    <script>
+        // 监听用户点击，解除静音
+        document.body.addEventListener('click', function () {
+            var video = document.getElementById('video');
+            if (video) {
+                video.muted = false;  // 解除静音
+                video.play();         // 确保视频开始播放
+            }
+        });
+    </script>
+</body>
+</html>
